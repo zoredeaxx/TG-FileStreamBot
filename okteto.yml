@@ -1,4 +1,4 @@
-name: webstream
+name: streamz
 command: python3 -m WebStreamer
 environment:
   - VIRTUAL_ENV=development

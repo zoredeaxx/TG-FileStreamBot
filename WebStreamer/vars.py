@@ -29,4 +29,4 @@ class Var(object):
     if ON_HEROKU:
         URL = f"https://{FQDN}/"     
     else:
-        URL = f"https://streamz-zoredeaxx.cloud.okteto.net"
+        URL = f"https://streamz-zoredeaxx.cloud.okteto.net/"

@@ -11,7 +11,7 @@ class Var(object):
     API_HASH = str(getenv('API_HASH', 'ce43762f206dc2a2eb115986fbe3b4a2'))
     BOT_TOKEN = str(getenv('BOT_TOKEN', '5255266526:AAEAtb5U2QYzln_s2qAbb9Lg657tfYzrfAk'))
     SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
-    WORKERS = int(getenv('WORKERS', '3'))
+    WORKERS = int(getenv('WORKERS', '6'))
     BIN_CHANNEL = int(getenv('BIN_CHANNEL', '-1001308033853'))     
     PORT = int(getenv('PORT', 8080))
     BIND_ADDRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
@@ -29,4 +29,4 @@ class Var(object):
     if ON_HEROKU:
         URL = f"https://{FQDN}/"     
     else:
-        URL = "http{}://{}{}/".format('s' if HAS_SSL else '', FQDN, '' if NO_PORT else ':'+ str(PORT))
+        URL = f"https://streamz-zoredeaxx.cloud.okteto.net"

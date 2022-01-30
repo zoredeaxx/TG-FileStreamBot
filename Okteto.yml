@@ -1,0 +1,8 @@
+name: webstream
+command: python3 -m WebStreamer
+environment:
+  - VIRTUAL_ENV=development
+sync:
+  - WebStreamer:/src
+forward:
+  - 8080:8080

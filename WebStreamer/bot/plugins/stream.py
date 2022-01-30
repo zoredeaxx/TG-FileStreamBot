@@ -4,7 +4,7 @@
 import logging
 from pyrogram import filters
 from WebStreamer.vars import Var
-from urllib.parse import quote_plus
+from urllib.parse import quote
 from WebStreamer.bot import StreamBot
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
@@ -25,13 +25,13 @@ async def media_receive_handler(_, m: Message):
     file_name = ''
     if file:
         file_name = file.file_name
-    log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
+    log_msg = await m.copy(chat_id=Var.BIN_CHANNEL)
     stream_link = f"{Var.URL}{log_msg.message_id}"
     if file_name:
-        stream_link += f'/{quote_plus(file_name)}'
+        stream_link += f'/{quote(file_name)}'
     logging.info(f"Generated link: {stream_link} for {m.from_user.first_name}")
     await m.reply_text(
         text = "<code>{}</code>".format(stream_link),
         quote = True,
-        reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton('Open', url=stream_link)]])
+        reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton('Download', url=stream_link)]])
     )

@@ -1,7 +1,7 @@
 name: streamz
 command: python3 -m WebStreamer
 environment:
-  - VIRTUAL_ENV=development
+  - environment=development
 sync:
   - WebStreamer:/src
 forward:

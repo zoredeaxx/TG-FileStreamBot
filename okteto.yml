@@ -1,8 +1,0 @@
-name: streamz
-command: python3 -m WebStreamer
-environment:
-  - environment=development
-sync:
-  - WebStreamer:/src
-forward:
-  - 8080:8080

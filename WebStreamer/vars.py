@@ -29,4 +29,4 @@ class Var(object):
     if ON_HEROKU:
         URL = f"https://{FQDN}/"     
     else:
-        URL = f""
+        URL = f"https://"
